@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-login-5fb52": {
+      "hosting": {
+        "login": [
+          "angular-login-5fb52"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-login-5fb52"
+  }
+}

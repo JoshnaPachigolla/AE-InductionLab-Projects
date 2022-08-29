@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+
+.form-container {
+    display: block;
+    max-width: 300px;
+    margin: auto;
+  
+    background: #eceff1;
+    padding: 48px;
+    border-radius: 16px;
+  }
+  .form-container .mat-form-field {
+    width: 100%;
+  }
+  
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .margin-top {
+    margin-top: 16px !important;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  .center-margin-top button{
+    background-color: rgb(22, 22, 107);
+  }
+  .ex1 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .navbar {
+      width: 100%;
+      background-color: rgb(18, 102, 150);
+      overflow: auto;
+      
+  
+    }
+    
+    .navbar a {
+      float: left;
+      padding: 12px;
+      color: white;
+      text-decoration: none;
+      font-size: 29px;
+    }
+    
+    
+    .navbar a:hover {
+      background-color: rgb(122, 153, 187);
+    }
+    
+  #sales {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #sales td, #sales th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #sales tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #sales tr:hover {background-color: #ddd;}
+    
+    #sales th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: rgb(18, 102, 150);
+      color: white;
+    }
+   html, body { height: 100%; }
+  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } 
+  
+  .links{
+    text-align: right;
+  }
+  .pie{
+    width: 500px;
+    height: 500px;
+  }

@@ -1,0 +1,224 @@
+
+<div class="ex1">
+  <h3>SELECT REGION, YEAR AND INDUSTRY</h3>
+  <label>Region: </label>&nbsp;
+  <select  
+  #mySelect1
+  (change)="selectRegion(mySelect1.value)">
+    <option>Select Region</option>
+    <option *ngFor="let Region of Region" >
+      {{ Region }}
+    </option>
+  </select>&nbsp;
+  <label>Year: </label>&nbsp;
+  <select 
+  #mySelect2
+  (change)="selectYear(mySelect2.value)">
+    <option>Select Year</option>
+    <option *ngFor="let Year of Year" >
+      {{ Year}}
+    </option>
+  </select>&nbsp;
+  <label>Industry: </label>&nbsp;
+  <select  
+  #mySelect3
+  (change)="selectIndustry(mySelect3.value)">
+    <option>Select Industry</option>
+    <option *ngFor="let Industry of Industry">{{Industry}}</option>
+  </select>&nbsp;
+  <button (click)="generateGraph(mySelect1,mySelect2)" style="background-color: rgb(18, 102, 150); color:white">Bar Chart and Pie Chart</button>
+  
+</div><br/><br/>
+<div class="ex1">
+<h4>SUMMARY:</h4>
+<table id="sales">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Region</th>
+      <th>Industry</th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>No of Opportunities</th>
+      <th>Expected Revenue</th>
+      <th>Projected Wins</th>
+      <th>Projected Revenue</th>
+    </tr>
+  </thead>
+    <tbody>
+      <tr *ngFor="let csvData of result  | paginate:{id:'list', itemsPerPage:15,currentPage:page,totalItems:totalRecord} ;let i=index">
+        
+          <td>
+              <span>{{i+1}}</span>
+          </td>
+          <td>
+              <span>{{csvData.Region}}</span>
+          </td>
+          <td>
+              <span>{{csvData.Industry}}</span>
+          </td>
+          <td>
+              <span>{{csvData.Year}}</span>
+          </td>
+          <td>
+              <span>{{csvData.Month}}</span>
+          </td>
+          <td>
+              <span>{{csvData.NoofOpportunities}}</span>
+          </td>
+          <td>
+              <span>{{csvData.ExpectedRevenue}}</span>
+          </td>
+          <td>
+              <span>{{csvData.ProjectedWins}}</span>
+          </td>
+          <td>
+              <span>{{csvData.ProjectedRevenue}}</span>
+          </td>
+      </tr>
+  </tbody>
+</table>
+<div class="links">
+  <pagination-controls id='list' [maxSize]="10"  [directionLinks]="true" (pageChange)="page=$event" ></pagination-controls>
+</div>
+
+
+</div>
+<div class="ex1">
+  <strong><h2>BARCHART</h2></strong>
+<u><h3>Monthly Sales:</h3></u>
+<div class="bar">
+  <canvas baseChart
+          [data]="salesData"
+          [type]="'bar'"
+          [options]="chartOptions1">
+  </canvas>
+
+</div>
+</div>
+<div class="ex1">
+  <strong><h2>PIECHART</h2></strong>
+  <u><h3>Total Revenue:</h3></u>
+  <div class="pie">
+    <canvas
+            baseChart
+            [data]="pieData"
+            [type]="'pie'"
+            [options]="chartOptions2"
+            ></canvas>
+
+  </div>
+
+</div>
+
+
+
+
+
+  <!-- <div class="fonts">
+    <div class="ex1">
+        <b><h2>SELECT REGION, YEAR AND INDUSTRY</h2></b>
+        <label>Region: </label>&nbsp;
+        <select  
+        #mySelect1
+        (change)="selectRegion(mySelect1.value)">
+          <option>Select Region</option>
+          <option *ngFor="let Region of Region" >
+            {{ Region }}
+          </option>
+        </select>&nbsp;
+        <label>Year: </label>&nbsp;
+        <select 
+        #mySelect2
+        (change)="selectYear(mySelect2.value)">
+          <option>Select Year</option>
+          <option *ngFor="let Year of Year" >
+            {{ Year}}
+          </option>
+        </select>&nbsp;
+        <label>Industry: </label>&nbsp;
+        <select  
+        #mySelect3
+        (change)="selectIndustry(mySelect3.value)">
+          <option>Select Industry</option>
+          <option *ngFor="let Industry of Industry">{{Industry}}</option>
+        </select>&nbsp;
+        
+        
+      </div><br/><br/>
+      <div class="ex1">
+      <b><h3>SUMMARY:</h3></b>
+      <table id="sales">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Region</th>
+            <th>Industry</th>
+            <th>Year</th>
+            <th>Month</th>
+            <th>No of Opportunities</th>
+            <th>Expected Revenue</th>
+            <th>Projected Wins</th>
+            <th>Projected Revenue</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr *ngFor="let csvData of result  | paginate:{id:'list', itemsPerPage:15,currentPage:page,totalItems:totalRecord} ;let i=index">
+              
+                <td>
+                    <span>{{i+1}}</span>
+                </td>
+                <td>
+                    <span>{{csvData.Region}}</span>
+                </td>
+                <td>
+                    <span>{{csvData.Industry}}</span>
+                </td>
+                <td>
+                    <span>{{csvData.Year}}</span>
+                </td>
+                <td>
+                    <span>{{csvData.Month}}</span>
+                </td>
+                <td>
+                    <span>{{csvData.NoofOpportunities}}</span>
+                </td>
+                <td>
+                    <span>{{csvData.ExpectedRevenue}}</span>
+                </td>
+                <td>
+                    <span>{{csvData.ProjectedWins}}</span>
+                </td>
+                <td>
+                    <span>{{csvData.ProjectedRevenue}}</span>
+                </td>
+            </tr>
+        </tbody>
+      </table>
+      <div class="links">
+        <pagination-controls id='list' [maxSize]="10"  [directionLinks]="true" (pageChange)="page=$event" ></pagination-controls>
+      </div>
+      
+      
+      </div>
+      <div class="ex1">
+        <strong><h2>BARCHART</h2></strong>
+      <u><h3>Monthly Sales:</h3></u>
+      <div width="400" height="400">
+        <canvas id="canvas">{{chart1}}</canvas>
+      </div> <br/>
+
+      <strong><h2>PIECHART</h2></strong>
+      <u><h3>Total Revenue:</h3></u>
+      </div>
+      <div>
+        <div style="height: 500px; width: 500px;">
+            <canvas id="pie">{{chart2}}</canvas>
+          </div> 
+      </div>
+
+  </div>
+  
+   
+  
+ -->
