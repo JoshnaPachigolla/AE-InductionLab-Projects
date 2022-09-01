@@ -77,27 +77,7 @@ export class HomeComponent implements OnInit {
   };
   chartOptions2: ChartOptions = {
     responsive: true,
-    scales: {
-      xAxes: {
-        title: {
-          display: true,
-          text: "Industries",
-          font: {
-            size: 15
-          }
-        }
-      },
-      yAxes: {
-        title: {
-          display: true,
-          text: 'value',
-          font: {
-            size: 15
-          }
-        },
-
-      }
-    },
+    
 
     plugins: {
       title: {
@@ -118,9 +98,7 @@ export class HomeComponent implements OnInit {
 //       this.chartData(this.result);
     });
   }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  ngOnInit(): void {}
   
   selectRegion(value: string) {
         this.searchValue.set('Region', value);
@@ -222,7 +200,39 @@ export class HomeComponent implements OnInit {
          this.salesData={
           labels:[ 'Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec',],
           datasets:[
-            {label:'Monthly Sales', data:this.month}
+            {label:'Monthly Sales', data:this.month,
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 205, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(201, 203, 207, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 205, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+
+            ],
+            borderColor: [
+              'rgb(255, 99, 132)',
+              'rgb(255, 159, 64)',
+              'rgb(255, 205, 86)',
+              'rgb(75, 192, 192)',
+              'rgb(54, 162, 235)',
+              'rgb(153, 102, 255)',
+              'rgb(201, 203, 207)',
+              'rgb(255, 99, 132)',
+              'rgb(255, 159, 64)',
+              'rgb(255, 205, 86)',
+              'rgb(75, 192, 192)',
+              'rgb(54, 162, 235)',
+              'rgb(153, 102, 255)',
+            ],
+            borderWidth: 1}
           ],
           
          }
@@ -234,7 +244,8 @@ export class HomeComponent implements OnInit {
                     'Software/Hardware',
                     'Energy', ],
           datasets:[
-            {label:'Revenue', data:this.p}
+            {label:'Revenue', data:this.p,
+          }
           ],
           
          }
