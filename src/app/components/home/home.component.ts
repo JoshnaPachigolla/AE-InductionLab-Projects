@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
       xAxes: {
         title: {
           display: true,
-          text: "months",
+          text: "Months",
           font: {
             size: 15
           }
@@ -59,7 +59,7 @@ export class HomeComponent implements OnInit {
       yAxes: {
         title: {
           display: true,
-          text: 'value',
+          text: 'Value(Revenue)',
           font: {
             size: 15
           }

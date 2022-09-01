@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-  apiUrl = 'https://raw.githubusercontent.com/JoshnaPachigolla/UseCase1/main/aggregated_res.json';
+  apiUrl = 'https://raw.githubusercontent.com/pachigollajoshna/bootstrapDemo/main/aggregated_res.json';
   getData(){
     return this.http.get(this.apiUrl).toPromise().then((data)=>{
       return data;

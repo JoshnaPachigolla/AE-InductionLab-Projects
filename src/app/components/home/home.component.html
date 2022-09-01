@@ -67,47 +67,52 @@
               <span>{{csvData.NoofOpportunities}}</span>
           </td>
           <td>
-              <span>{{csvData.ExpectedRevenue}}</span>
+              <span>{{'$'+csvData.ExpectedRevenue.toLocaleString('en')}}</span>
           </td>
           <td>
               <span>{{csvData.ProjectedWins}}</span>
           </td>
           <td>
-              <span>{{csvData.ProjectedRevenue}}</span>
+              <span>{{'$'+csvData.ProjectedRevenue.toLocaleString('en')}}</span>
           </td>
       </tr>
   </tbody>
-</table>
+</table><br/>
 <div class="links">
   <pagination-controls id='list' [maxSize]="10"  [directionLinks]="true" (pageChange)="page=$event" ></pagination-controls>
 </div>
 
 
 </div>
-<div class="ex1">
-  <strong><h2>BARCHART</h2></strong>
-<u><h3>Monthly Sales:</h3></u>
-<div class="bar">
-  <canvas baseChart
-          [data]="salesData"
-          [type]="'bar'"
-          [options]="chartOptions1">
-  </canvas>
 
-</div>
+<div class="ex1">
+  <strong><h2>Monthly Sales(Revenue)</h2></strong>
+  <center>
+    <div class="bar">
+      <canvas baseChart
+              [data]="salesData"
+              [type]="'bar'"
+              [options]="chartOptions1">
+      </canvas>
+    
+    </div>
+
+  </center>
 </div>
 <div class="ex1">
-  <strong><h2>PIECHART</h2></strong>
-  <u><h3>Total Revenue:</h3></u>
-  <div class="pie">
-    <canvas
-            baseChart
-            [data]="pieData"
-            [type]="'pie'"
-            [options]="chartOptions2"
-            ></canvas>
+  <strong><h2>Total Revenue (Industries)</h2></strong>
+  <center>
+    <div class="pie">
+      <canvas
+              baseChart
+              [data]="pieData"
+              [type]="'pie'"
+              [options]="chartOptions2"
+              ></canvas>
+  
+    </div>
 
-  </div>
+  </center>
 
 </div>
 
