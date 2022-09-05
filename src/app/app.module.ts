@@ -24,6 +24,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
 import { DataService } from './services/data.service';
 import { NgChartsModule } from 'ng2-charts';
+import { OrderModule} from 'ngx-order-pipe';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { NgChartsModule } from 'ng2-charts';
     MatToolbarModule,
     ReactiveFormsModule,
     NgChartsModule,
+    OrderModule,
     NgxPaginationModule,
+    
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

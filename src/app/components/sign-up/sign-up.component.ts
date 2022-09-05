@@ -63,7 +63,7 @@ export class SignUpComponent implements OnInit {
 
     const { name, email, password } = this.signUpForm.value;
     this.authService.signUp(email as string, password as string).pipe(
-        this.toast.observe({
+        this.toast.observe({//toast is for notifications
           success: 'Congrats! You are all signed up',
           loading: 'Signing up...',
           error: ({ message }) => `${message}`,
